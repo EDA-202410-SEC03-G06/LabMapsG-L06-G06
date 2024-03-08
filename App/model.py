@@ -113,7 +113,7 @@ def newCatalog():
     """
     catalog['years'] = mp.newMap(40,
                                  maptype='PROBING',
-                                 loadfactor=0.5,
+                                 loadfactor=0.5,    
                                  cmpfunction=compareMapYear)
 
     """
@@ -274,6 +274,8 @@ def addBookTitle(catalog, book):
     """
     Completar la descripcion de addBookTitle
     """
+    book_title = book['title']
+    mp.put(catalog['titles'],
     pass
 
 
@@ -446,5 +448,11 @@ def compareTitles(title, book):
         int: retrona 0 si son iguales, 1 si el primero es mayor
         y -1 si el primero es menor
     """
+    book_title = me.getKey(book)
+    if book_title(book_title == title):
+        return 0
+    elif (book_title > title):
+        return 1
+    else:
+        return -1
     
-    pass
