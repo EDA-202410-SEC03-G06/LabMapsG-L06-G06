@@ -275,8 +275,11 @@ def addBookTitle(catalog, book):
     Completar la descripcion de addBookTitle
     """
     book_title = book['title']
-    mp.put(catalog['titles'],
-    pass
+    isin = mp.contains(catalog['titles'])
+    if isin ==False:
+        mp.put(catalog['titles'],book_title,book) 
+        
+    
 
 
 # ==============================
@@ -320,8 +323,10 @@ def getBookByTitle(catalog, title):
     """
     Completar la descripcion de getBookByTitle
     """
-    pass
-
+    book = mp.get(catalog['titles'],title)
+    if title:
+        return me.getValue(book)
+    return None
 
 def booksSize(catalog):
     """
@@ -349,7 +354,7 @@ def titlesSize(catalog):
     """
     Completar la descripcion de titlesSize
     """
-    pass
+    return mp.size(catalog['titles'])
 
 
 # ==============================
