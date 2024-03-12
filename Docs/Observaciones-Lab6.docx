@@ -6,6 +6,7 @@ Para la segunda funcion, es decir catalog['authors'], espera almacenae 800 eleme
 con el int '800'.
 
 c. Cual es el tamano de las tablas hash para years y authors?
+Authors tiene 156 autores, mientras que years no sale cuantos tiene, sin embargo debe tener aproximadamente un tamaño de 40 elementos de carga
 
 d. Cual es el factor de carga maximo?
 
@@ -20,3 +21,4 @@ mp.get tiene como parametros el mapa y el valor, lo que hace eso es devolver la 
 de los años que se escogió. year sirve como la llave 'año' dentro de la que estan guardados los libros de ese año en particular.
 me.getValue coge la pareja y la usa para devolver solo la llave, esto devolverá los libros en el catalogo de años de ese año. 
 
+k. ¿Cuál es la llave y el valor del nuevo indice implementado?
