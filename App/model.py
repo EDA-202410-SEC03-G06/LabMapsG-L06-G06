@@ -275,7 +275,7 @@ def addBookTitle(catalog, book):
     Completar la descripcion de addBookTitle
     """
     book_title = book['title']
-    isin = mp.contains(catalog['titles'])
+    isin = mp.contains(catalog['titles'], book_title)
     if isin ==False:
         mp.put(catalog['titles'],book_title,book) 
         

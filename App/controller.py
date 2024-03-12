@@ -169,6 +169,6 @@ def titlesSize(control):
     """
     Completar la descripcion de titlesSize
     """
-    books = model.booksSize(control["model"])
+    books = model.titlesSize(control["model"])
     return books
 

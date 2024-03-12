@@ -114,7 +114,10 @@ def printBooksbyTitle(books):
     """
     Completar la descripcion de printBooksbyTitle
     """
-    pass
+    if books:
+        print(f"Los datos del libro {books['title']} son:  \nISBN: {books['isbn']} \nRating: {books['average_rating']}\n")
+    else:
+        print("No se encontro el libro.\n")
 
 # Menu de opciones
 
@@ -126,7 +129,7 @@ def printMenu():
     print("3- Consultar los libros de un año")
     print("4- Consultar los libros de un autor")
     print("5- Consultar los Libros por etiqueta")
-    # TODO lab 6, agregar la opcion nueva del menu
+    print("6- Consultar los Libros por Titulo")
     print("0- Salir")
 
 
@@ -163,8 +166,9 @@ while True:
         printBooksbyTag(books)
 
     elif int(inputs[0]) == 6:
-        # TODO lab 6, conectar con las funciones del controlador e imprimir
-        pass
+        titulo = input("Titulo del libro a buscar: ")
+        books = controller.getBooksByTitle(ctrlr, titulo)
+        printBooksbyTitle(books)
 
     elif int(inputs[0]) == 0:
         break
