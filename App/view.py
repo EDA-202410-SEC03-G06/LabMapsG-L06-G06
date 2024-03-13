@@ -115,7 +115,8 @@ def printBooksbyTitle(books):
     Completar la descripcion de printBooksbyTitle
     """
     if books:
-        print(f"Los datos del libro {books['title']} son:  \nISBN: {books['isbn']} \nRating: {books['average_rating']}\n")
+        for book in lt.iterator(books):
+            print("Los datos del libro"+book['original_title'] + " son:  \nISBN: " + book['isbn'] + " \nRating: " + book['average_rating'])
     else:
         print("No se encontro el libro.\n")
 
