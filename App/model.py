@@ -274,10 +274,14 @@ def addBookTitle(catalog, book):
     """
     Completar la descripcion de addBookTitle
     """
-    book_title = book['title']
-    isin = mp.contains(catalog['titles'], book_title)
-    if isin ==False:
-        mp.put(catalog['titles'],book_title,book) 
+    book_title = book['original_title']
+    versiones = lt.newList('ARRAY_LIST')
+    if  mp.contains(catalog['titles'], book_title) ==False:
+        mp.put(catalog['titles'],book_title,versiones)
+    
+    tup = mp.get(catalog['titles'],book_title) 
+    lta = me.getValue(tup)
+    lt.addLast(lta,book)
         
     
 
@@ -324,7 +328,7 @@ def getBookByTitle(catalog, title):
     Completar la descripcion de getBookByTitle
     """
     book = mp.get(catalog['titles'],title)
-    if title:
+    if book:
         return me.getValue(book)
     return None
 
