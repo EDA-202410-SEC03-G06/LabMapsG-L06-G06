@@ -66,6 +66,7 @@ def loadBooks(control):
     booksfile = cf.data_dir + 'GoodReads/books-small.csv'
     input_file = csv.DictReader(open(booksfile, encoding='utf-8'))
     for book in input_file:
+        model.addBook(control['model'], book)
         model.addBookTitle(control['model'], book)
 
 

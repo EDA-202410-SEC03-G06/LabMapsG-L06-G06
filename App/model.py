@@ -458,7 +458,7 @@ def compareTitles(title, book):
         y -1 si el primero es menor
     """
     book_title = me.getKey(book)
-    if book_title(book_title == title):
+    if book_title == title:
         return 0
     elif (book_title > title):
         return 1
